@@ -1,7 +1,7 @@
 import { Container, Row, Col, Table, FormText, Label, Input, FormGroup } from 'reactstrap'
 import './App.css'
 import { useState } from "react"
-
+import { titulos } from './columnas'
 
 function App() {
   const [citaState, setCitaState] = useState("")
@@ -12,7 +12,7 @@ function App() {
 
 
     < div className="App" >
-      <Container d-flex>
+      <Container >
         <Row x="4 ">
           <Col className="bg-primary border">Tipo</Col>
           <Col className="bg-primary border">Fecha</Col>
@@ -60,16 +60,10 @@ function App() {
 
           <Table bordered>
             <thead>
-              <tr>
-                <th>Hora</th>
-                <th>Hc</th>
-                <th>N</th>
-                <th>Procedimiento </th>
-                <th>Telefono/Celular</th>
-                <th>Medio</th>
-                <th>Estado </th>
-                <th>Observacion</th>
-                <th>**</th>
+              <tr >
+                {titulos.map(titulo => (
+                  <th>{titulo}</th>
+                ))}
               </tr>
             </thead>
             <tbody>
